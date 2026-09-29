@@ -1,0 +1,6 @@
+# Run after scripts/synth_nco.ys from repository root; mkdir -p reports first.
+# Show the optimized, memory-preserving logical netlist saved by synthesis.
+# This reuses that netlist, avoiding a second RTL elaboration/synthesis run.
+read_json build/nco-memory.json
+hierarchy -check -top rf_nco
+show -format svg -viewer none -width -signed -enum -prefix reports/rf_nco_schematic rf_nco

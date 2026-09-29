@@ -1,0 +1,14 @@
+# Run from repository root: yosys -l build/yosys-nco.log scripts/synth_nco.ys
+read_verilog -sv -Irtl/nco rtl/nco/rf_nco.sv
+hierarchy -check -top rf_nco
+proc
+opt
+memory_collect
+check -assert
+tee -o build/nco-memory-stat.txt stat
+write_json build/nco-memory.json
+# Generic gate synthesis only; no FPGA family mapping or timing claim.
+synth -top rf_nco
+check -assert
+tee -o build/nco-synth-stat.txt stat
+write_json build/nco-synth.json

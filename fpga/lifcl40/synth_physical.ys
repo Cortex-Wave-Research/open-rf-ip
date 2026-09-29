@@ -1,0 +1,11 @@
+read_verilog -defer -sv -Irtl/nco rtl/nco/rf_nco.sv rtl/chirp/chirp_controller.sv rtl/chirp/rf_chirp_nco.sv fpga/lifcl40/physical_top.sv
+hierarchy -check -top physical_top
+proc
+flatten
+opt
+memory_collect
+check -assert
+write_json build/lifcl40/physical-coarse.json
+synth_nexus -family lifcl -top physical_top -json build/lifcl40/physical-synth.json
+check -assert
+tee -o build/lifcl40/synth-stat.txt stat

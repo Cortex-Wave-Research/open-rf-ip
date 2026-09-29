@@ -1,0 +1,14 @@
+# Run from repository root after mkdir -p reports/lifcl40 reports/logs.
+# yosys -l reports/logs/lifcl40-yosys.log scripts/synth_lifcl40_nco.ys
+read_verilog -defer -sv -Irtl/nco rtl/nco/rf_nco.sv fpga/lifcl40/nco_top.sv
+hierarchy -check -top nco_top
+proc
+flatten
+opt
+memory_collect
+check -assert
+tee -o reports/lifcl40/coarse-stat.txt stat
+write_json reports/lifcl40/coarse.json
+synth_nexus -family lifcl -top nco_top -json reports/lifcl40/nco-synth.json
+check -assert
+tee -o reports/lifcl40/synth-stat.txt stat

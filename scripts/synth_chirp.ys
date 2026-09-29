@@ -1,0 +1,13 @@
+# Generic mapping, not FPGA utilization. Run from repository root.
+read_verilog -defer -sv -Irtl/nco rtl/nco/rf_nco.sv rtl/chirp/chirp_controller.sv rtl/chirp/rf_chirp_nco.sv
+hierarchy -check -top rf_chirp_nco
+proc
+opt
+memory_collect
+check -assert
+tee -o reports/chirp/generic-coarse-stat.txt stat
+write_json reports/chirp/generic-coarse.json
+synth -top rf_chirp_nco
+check -assert
+tee -o reports/chirp/generic-stat.txt stat
+write_json reports/chirp/generic.json

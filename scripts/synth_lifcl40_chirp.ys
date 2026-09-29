@@ -1,0 +1,12 @@
+read_verilog -defer -sv -Irtl/nco rtl/nco/rf_nco.sv rtl/chirp/chirp_controller.sv rtl/chirp/rf_chirp_nco.sv fpga/lifcl40/chirp_top.sv
+hierarchy -check -top chirp_top
+proc
+flatten
+opt
+memory_collect
+check -assert
+tee -o reports/chirp/lifcl40-coarse-stat.txt stat
+write_json reports/chirp/lifcl40-coarse.json
+synth_nexus -family lifcl -top chirp_top -json reports/chirp/lifcl40-synth.json
+check -assert
+tee -o reports/chirp/lifcl40-stat.txt stat

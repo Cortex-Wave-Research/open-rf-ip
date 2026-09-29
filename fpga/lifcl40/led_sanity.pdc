@@ -1,0 +1,8 @@
+# Lattice FPGA-EB-02028-1.7 Table 5.1 and Figure A.7 (page 37).
+# Native clock: JP2 installed, JP1 removed. Bank 1 at 3.3 V.
+ldc_set_location -site {L13} [get_ports clk]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports clk]
+ldc_set_location -site {E17} [get_ports led0_n]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports led0_n]
+ldc_set_location -site {F13} [get_ports led1_n]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports led1_n]

@@ -1,0 +1,45 @@
+# Python environment/cache
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# FPGA build output
+build/
+*.bit
+*.fasm
+*.config
+*.rpt
+*.log
+
+# Simulation output
+waveforms/
+*.fst
+*.vcd
+
+# Editor/temp files
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+.DS_Store
+
+# Downloaded/local tool packages
+tools/
+third_party_build/
+downloads/
+
+# Generated and internal engineering evidence (preserved on disk)
+reports/hardware_capture/
+reports/hardware_verification/
+reports/plots/
+/reports/*/
+/reports/milestone*.md
+/reports/git_milestone4_commit.md
+/reports/rf_nco_schematic.*
+
+# Internal development guidance and history
+/AGENTS.md
+/PROJECT_MEMORY.md
+/udo apt update
