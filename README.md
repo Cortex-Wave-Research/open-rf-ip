@@ -1,10 +1,16 @@
 # open-rf-ip
 
-Vendor-independent SystemVerilog soft IP for FPGA-based RF waveform generation and FMCW chirps, verified against independent Python reference models and physically validated on an LIFCL-40-EVN FPGA.
+Open-source, vendor-independent **SystemVerilog soft IP for FPGA-based RF waveform generation, DDS/NCO signal synthesis, and FMCW chirp generation**. The project is verified against independent Python reference models and physically validated on a Lattice CrossLink-NX LIFCL-40-EVN FPGA.
 
 ## Overview
 
-A compact digital waveform engine with a phase-continuous NCO, programmable linear chirp controller, and exact integer verification. The reusable RTL uses no vendor primitives or proprietary IP.
+`open-rf-ip` is a reusable digital RF waveform engine built around a phase-continuous **Numerically Controlled Oscillator (NCO)** and a programmable linear **FMCW chirp controller**.
+
+The RTL is written in portable SystemVerilog with no vendor primitives or proprietary IP dependencies. Verification uses independent Python models, pytest/cocotb simulation, bit-exact sample comparison, Verilator lint, Yosys synthesis, and open-source FPGA implementation tools.
+
+The compact implementation has been physically validated on an LIFCL-40-EVN FPGA, including direct capture of 1,024 hardware-generated I/Q samples and exact comparison against the Python reference model with zero mismatches.
+
+The project is intended as an open foundation for experimentation with FPGA-based RF signal generation, radar waveform synthesis, spectral-purity optimization, and future parallel high-bandwidth architectures.
 
 ## Architecture
 
