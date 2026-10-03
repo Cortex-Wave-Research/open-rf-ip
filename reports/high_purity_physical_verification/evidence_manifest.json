@@ -1,0 +1,68 @@
+{
+  "evidence": {
+    "examples/physical_capture/capture_1024.bin": {
+      "sha256": "01588b97134f0fd15e7bb73dc4164e59adc20ae0d983de08ec3899d860910d8c",
+      "size_bytes": 4112
+    },
+    "examples/physical_capture/capture_1024.csv": {
+      "sha256": "838cea308f4670e01a06aa13fcae285304edb8e953b948e3c67764cd3843ff76",
+      "size_bytes": 22307,
+      "physical_line_count": 1025,
+      "data_row_count": 1024
+    },
+    "reports/hardware_capture/high_purity_1024.bin": {
+      "sha256": "a330767ded866da6afb130b27300448921d562ead2fba65afed027f73783b964",
+      "size_bytes": 5136
+    },
+    "reports/hardware_capture/high_purity_1024.csv": {
+      "sha256": "d90676b2796dce1993dc3756796df85f03ddd10a45332cc22f80b871d2d3b52d",
+      "size_bytes": 25318,
+      "physical_line_count": 1025,
+      "data_row_count": 1024
+    }
+  },
+  "protected_source_sha256": {
+    "rtl/chirp/rf_chirp_nco_mode.sv": "74243d13960c491243fe991c55c76d11dc4a7879bccc378f0dd02abd699ad687",
+    "rtl/chirp/rf_chirp_nco.sv": "ba36f7f12706ea3c091d4ceaeaf95baf7303cf539ba6fc9425f8303f2cc29e34",
+    "rtl/chirp/chirp_controller.sv": "9407826faa8481c29ae6496c25fc8f83e1fc5ba9d930d977146b213430e6e9be",
+    "rtl/nco/rf_nco_high_purity.sv": "a0f10b261e939606e4019f337f0fcd84bfe860bd5975312fcf7cc122808383e3",
+    "rtl/nco/rf_nco.sv": "63c88433029ca8e30fde70576fff4392dae68e8b8daa89b921b305fdc9478437",
+    "rtl/nco/sine_lut_12b.svh": "dd29f7bffb00c7b7a7c77165eafe29f90eec782c716cafbc92897418936119f4",
+    "rtl/nco/rf_nco_mode.sv": "390a80ed8fae01d8e9c85d981b604a116c1c4364b862e6c57a0408d873114786",
+    "rtl/nco/high_purity_quarter.svh": "a3e1227bf9eb206344441ea1b520c47fbab3e8d825f0d1f94c412f7f198aff7c",
+    "models/python/chirp.py": "1b7741f97d17632f5dd417986dea2d7ce8e55d88a8d35a74709eb14e7cee4732",
+    "models/python/nco.py": "98fb7ab2d21bb9ac3d4b6a9ab86f3328c0532341fde7fa5a3d143764ebacbc7d",
+    "models/python/high_purity.py": "b052c8de54e5ce6632b98546ea6bf14ce990a3cebc1cd18406b367f89173cc40",
+    "models/python/nco_lut.py": "1b4770fe6d04c0ebc71bfd34b312e2535a1b805cc1ca1f0ad8fb0b0c801d3769",
+    "fpga/lifcl40/capture/capture_format.py": "2133cfc23d4fa168adaa2b67263974461b40d27134dce016c360399f0fa770db",
+    "fpga/lifcl40/capture/capture_i2c.sv": "ca363d1ea7765352b4cc93a7f0110ce96266f7b7b00c134d35647601d1f9a5af",
+    "fpga/lifcl40/capture/audit.py": "1ec32a62f2ce977a9ad2b5066efd6de66a7ef05ece3349c039ba1fe75344e2e6",
+    "fpga/lifcl40/capture/test_format.py": "37ecd51332720ea3e9aedfcad48a7c390d7deff463487d03cf56c4a9c29e1b67",
+    "fpga/lifcl40/capture/integration_cocotb.py": "262480d3d4f2bd7d601096b3152fbcd5bbffcae9bc27be7bcb56004275ad956b",
+    "fpga/lifcl40/capture/test_capture.py": "092f244aad6b6a04aaa5ccbd488c687142b00baaffcf0fe988bafd0699fd6851",
+    "fpga/lifcl40/capture/capture_store.sv": "382ece17dfdbbd33ed64ff1e1fb3b98f14c6e77bee77436388f76afc2ac13aa7",
+    "fpga/lifcl40/capture/capture_cocotb.py": "b6453b97383cee6a9c6b47a8b35414a402fdac0fc57a79a011722c0c94bf37af",
+    "fpga/lifcl40/capture/capture_readback_top.sv": "7b1cded57ceb2c48388963a87b5a51b115736567d8fce0f39ba398a259eae66c",
+    "fpga/lifcl40/capture/read_capture.py": "c1ca9c99da0500c1f5e687acfc43fceb41cfe4ba6bc61160b6cf565dc282cb79",
+    "fpga/lifcl40/capture/sim_top.sv": "191b0f3e1b511fef5457fdd15b94eaa6ee5a0ee34e7f1043b4bb960f0afb3207",
+    "fpga/lifcl40/capture/read_capture_v2.py": "fc9183854b525df4f4c88492749de4307178c887ede9533463b655d9ac6c45fa",
+    "fpga/lifcl40/high_purity_capture/test_high_purity_capture.py": "034732fddb21c4ec349f500c70a12d7018f6f4fd4413b7278195e3744599bfd9",
+    "fpga/lifcl40/high_purity_capture/test_high_purity_format.py": "4de5c14d6c20e7554ffacd2f71ed719f48dfe04975cd7fed28dee0807a9cace0",
+    "fpga/lifcl40/high_purity_capture/audit.py": "4e7fc191b561ddb0aae93cdd98a6014cbaa41723407dc976bea6695ea68a27ed",
+    "fpga/lifcl40/high_purity_capture/integration_cocotb.py": "ec6e12d68b1a13601698402c46d414e2862886fe459066ff9e198809d4b6aef7",
+    "fpga/lifcl40/high_purity_capture/transport_cocotb.py": "e3547aa4829ba237f46f1d472de21ea5fa4de66e7eb020e360feeae31167d3f0",
+    "fpga/lifcl40/high_purity_capture/high_purity_capture_top.sv": "55d76ec1d3185cb7fe705f5165e30e938a4a5d82f71178253cfbf8ddd8ec546e",
+    "fpga/lifcl40/high_purity_capture/hp_capture_store.sv": "2adf3882e7f69f25688656774a5df2885e5070ea058f3eca03435ff6361d40a8",
+    "fpga/lifcl40/high_purity_capture/hp_capture_sim.sv": "d0dae875305849df8df3d27fcfb61f966da62adb59e58c7fdcd57174045f715c",
+    "fpga/lifcl40/capture/capture.pdc": "22ab0141c301c5f0d76c3d17eacca61bf5b33a4db49b79bc392e73632991748a"
+  },
+  "loaded_bitstream_sha256": "206f10e0fd0d69f60f4fae54c2ea8535497e5fe8818cf2dbf2cc27222277233e",
+  "historical_document_sha256": {
+    "docs/high_purity_nco.md": "9b4f3ef193acd271e27d7ee9660f8754a05a4a6d706d4e8c0fadeaf8e3a0971a"
+  },
+  "historical_test_sha256": {
+    "fpga/lifcl40/high_purity_capture/test_high_purity_format.py": "3d560df0a97aaf03933dca76d48f022683e61bd9e2fad8379948289067efed4e",
+    "fpga/lifcl40/high_purity_capture/integration_cocotb.py": "a270bc9144591c274d0d2767cb25e048921ae683bb15a400ae6466037ceeb37a"
+  },
+  "publication_note": "Original raw CSV/BIN hashes and production RTL/model/decoder hashes unchanged. Compact evidence paths use the byte-identical Milestone 4 public copies. The RFC1 test only changes its fixture path. Historical document/test hashes are provenance, not current dependencies. The loaded bitstream is generated/local and is not required for offline comparison. The capture simulation test creates its derived output directory in fresh clones; assertions and reference behavior are unchanged."
+}

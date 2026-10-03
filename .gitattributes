@@ -1,3 +1,5 @@
 # Preserve immutable physical evidence bytes, including the CSV's original CRLF.
 examples/physical_capture/capture_1024.csv -text whitespace=cr-at-eol
 examples/physical_capture/capture_1024.bin -text
+reports/hardware_capture/high_purity_1024.csv -text whitespace=cr-at-eol
+reports/hardware_capture/high_purity_1024.bin -text

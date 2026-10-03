@@ -49,3 +49,43 @@ These scripts build and audit images without programming hardware. The capture b
 ## Milestone 4 release audit
 
 The public-layout offline regression passed **147 tests**. A further **16 RTL/board test runners passed** using the original compact controller, whose SHA256 matches the pre-integration baseline. This includes the capture/transport simulation and exact chirp comparisons. The published CSV and binary reproduced all 1024 samples with zero I/Q/control mismatches. Both offline plotting commands completed successfully. This release audit did not rebuild FPGA bitstreams or access hardware.
+
+## Milestone 5 / 5A offline reproduction
+
+The release regression covers the independent high-purity model, both production
+modes, RFC1/RFC2 format checks, simulated capture/transport, both physical captures,
+and malformed-input/mismatch rejection. Run without a board connection:
+
+```sh
+.venv/bin/python -m pytest -q verification/pytest/test_high_purity_model.py verification/pytest/test_production_modes.py fpga/lifcl40/high_purity_capture/test_high_purity_format.py fpga/lifcl40/high_purity_capture/test_high_purity_capture.py analysis/test_hardware_verification.py analysis/test_high_purity_hardware.py fpga/lifcl40/capture/test_format.py
+.venv/bin/python analysis/verify_high_purity_hardware.py
+.venv/bin/python scripts/generate_high_purity_lut.py --check
+.venv/bin/python analysis/high_purity_integration.py
+```
+
+The 87-test release regression passes. The physical comparator checks pinned
+CSV/BIN bytes, production source hashes, every sample/control field, and RFC2-to-CSV
+agreement. It writes only derived files under ignored
+`reports/high_purity_physical_verification/derived/`; the public raw evidence and
+metadata are not overwritten. The local generated bitstream is checked against
+the recorded loaded hash if present, but is not needed by a fresh clone.
+The spectral command recreates the defined 72-tone numerical digital SFDR study;
+it does not use physical chirp samples to infer analog/RF performance.
+
+Optional offline implementation reproduction (requires Yosys, nextpnr-nexus,
+Project Oxide; potentially several minutes):
+
+```sh
+.venv/bin/python fpga/lifcl40/production_modes/build.py
+.venv/bin/python fpga/lifcl40/production_modes/build_chirp.py
+bash fpga/lifcl40/high_purity_capture/build.sh
+.venv/bin/python analysis/plot_high_purity_resources.py
+.venv/bin/python analysis/audit_high_purity_integration.py
+```
+
+Run the regression and spectral command first: the final audit consumes their
+generated results and the optional builds. The preservation audit also reads the
+Milestone 4 commit from local Git history. Expected 125/150 MHz NCO timing failures
+are recorded by the sweep; 100 MHz acceptance is required. These commands build
+and audit files only. They do not program or access hardware. Bitstream bytes may
+vary with tool versions; the recorded hash identifies the image actually loaded.

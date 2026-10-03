@@ -1,5 +1,7 @@
 # Linear FMCW chirp contract
 
+This page describes the preserved compact configuration. See [selectable high-purity mode](high_purity_nco.md) for 64-bit arithmetic, 18-bit I/Q, and its two-stage latency.
+
 Milestone 3 adds `chirp_controller` and `rf_chirp_nco` around the unchanged
 `rf_nco`. Reusable RTL is vendor-independent. Initial widths are fixed:
 32-bit phase/frequency word, signed 32-bit step, unsigned 32-bit length/index,

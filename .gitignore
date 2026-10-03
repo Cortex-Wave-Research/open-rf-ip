@@ -30,16 +30,47 @@ tools/
 third_party_build/
 downloads/
 
-# Generated and internal engineering evidence (preserved on disk)
-reports/hardware_capture/
-reports/hardware_verification/
-reports/plots/
-/reports/*/
-/reports/milestone*.md
-/reports/git_milestone4_commit.md
-/reports/rf_nco_schematic.*
+# Internal reports stay local; publish only the selected physical evidence.
+/reports/*
+!/reports/hardware_capture/
+/reports/hardware_capture/*
+!/reports/hardware_capture/high_purity_1024.csv
+!/reports/hardware_capture/high_purity_1024.bin
+!/reports/high_purity_physical_verification/
+/reports/high_purity_physical_verification/*
+!/reports/high_purity_physical_verification/evidence_manifest.json
+!/reports/high_purity_physical_verification/comparison_results.json
+
+# Historical experiments and reference notes outside this production release
+/experiments/
+/analysis/high_purity_nco/
+/fpga/lifcl40/high_purity/
+/docs/reference_initial_nco.md
+/docs/ti-sbaa635-notes.md
 
 # Internal development guidance and history
 /AGENTS.md
 /PROJECT_MEMORY.md
 /udo apt update
+
+# Additional local environments, caches, coverage, and simulator scratch
+venv/
+env/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+out/
+tmp/
+temp/
+cache/
+node_modules/
+target/
+obj_dir/
+sim_build/
+*.ghw
+*.wlf
+.vscode/
+.idea/

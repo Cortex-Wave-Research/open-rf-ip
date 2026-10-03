@@ -1,0 +1,247 @@
+{
+  "samples_compared": 1024,
+  "mismatch_counts": {
+    "I": 0,
+    "Q": 0,
+    "valid": 0,
+    "chirp_start": 0,
+    "chirp_end": 0
+  },
+  "first_mismatch_index": {
+    "I": null,
+    "Q": null,
+    "valid": null,
+    "chirp_start": null,
+    "chirp_end": null
+  },
+  "first_eight_mismatches_per_field": {
+    "I": [],
+    "Q": [],
+    "valid": [],
+    "chirp_start": [],
+    "chirp_end": []
+  },
+  "records_with_any_mismatch": 0,
+  "max_absolute_error": {
+    "I": 0,
+    "Q": 0
+  },
+  "rms_error": {
+    "I": 0.0,
+    "Q": 0.0
+  },
+  "marker_checks": {
+    "first_record_start": true,
+    "exactly_one_start": true,
+    "all_end_zero": true,
+    "all_valid": true
+  },
+  "exact_pass": true,
+  "configuration": {
+    "sample_rate_hz": 12000000,
+    "start_word": 768614336404564651,
+    "step": 230607361657535,
+    "length": 10000,
+    "repeat": false,
+    "depth": 1024,
+    "initial_phase": 0,
+    "phase_bits": 64,
+    "phase_resolution_bits": 16,
+    "output_bits": 18,
+    "dither": false,
+    "output_convention": "I=cos, Q=sin; pre-increment phase; nearest/ties-away; symmetric +/-131071",
+    "phase_arithmetic": "W[k]=(start+k*step) mod 2^64; P[k]=(k*start+step*k*(k-1)/2) mod 2^64",
+    "amplitude_mapping": "independent quarter-wave binary64 sine; top 16 phase bits; low 48 retained",
+    "reset": "four synchronous startup reset edges; phase and both pipeline stages zero",
+    "start_condition": "held start, enable=1; capture starts on first valid && chirp_start",
+    "nco_latency_active_edges": 2,
+    "marker_delay_extra_edges": 1,
+    "marker_latency": "matches I/Q: first chirp_start at E2 after start acceptance E0",
+    "capture_latency_edges": 1,
+    "alignment_offset": 0,
+    "alignment_contract": "E0 accept; E1 admit P0; E2 output sample0/start; E3 store pre-edge sample0 as capture index0"
+  },
+  "raw_crosscheck": {
+    "status": "PASS",
+    "header_validation": "PASS",
+    "format": "RFC2",
+    "version": 2,
+    "capture_done": true,
+    "gap_error": false,
+    "sample_count": 1024,
+    "record_size_bytes": 5,
+    "component_width_bits": 18,
+    "image_size_bytes": 5136,
+    "reserved_header_and_record_bits_zero": true,
+    "records_compared": 1024,
+    "records_with_any_mismatch": 0,
+    "first_eight_mismatches": []
+  },
+  "evidence": {
+    "examples/physical_capture/capture_1024.bin": {
+      "sha256": "01588b97134f0fd15e7bb73dc4164e59adc20ae0d983de08ec3899d860910d8c",
+      "size_bytes": 4112
+    },
+    "examples/physical_capture/capture_1024.csv": {
+      "sha256": "838cea308f4670e01a06aa13fcae285304edb8e953b948e3c67764cd3843ff76",
+      "size_bytes": 22307,
+      "physical_line_count": 1025,
+      "data_row_count": 1024
+    },
+    "reports/hardware_capture/high_purity_1024.bin": {
+      "sha256": "a330767ded866da6afb130b27300448921d562ead2fba65afed027f73783b964",
+      "size_bytes": 5136
+    },
+    "reports/hardware_capture/high_purity_1024.csv": {
+      "sha256": "d90676b2796dce1993dc3756796df85f03ddd10a45332cc22f80b871d2d3b52d",
+      "size_bytes": 25318,
+      "physical_line_count": 1025,
+      "data_row_count": 1024
+    }
+  },
+  "protected_source_sha256": {
+    "rtl/chirp/rf_chirp_nco_mode.sv": "74243d13960c491243fe991c55c76d11dc4a7879bccc378f0dd02abd699ad687",
+    "rtl/chirp/rf_chirp_nco.sv": "ba36f7f12706ea3c091d4ceaeaf95baf7303cf539ba6fc9425f8303f2cc29e34",
+    "rtl/chirp/chirp_controller.sv": "9407826faa8481c29ae6496c25fc8f83e1fc5ba9d930d977146b213430e6e9be",
+    "rtl/nco/rf_nco_high_purity.sv": "a0f10b261e939606e4019f337f0fcd84bfe860bd5975312fcf7cc122808383e3",
+    "rtl/nco/rf_nco.sv": "63c88433029ca8e30fde70576fff4392dae68e8b8daa89b921b305fdc9478437",
+    "rtl/nco/sine_lut_12b.svh": "dd29f7bffb00c7b7a7c77165eafe29f90eec782c716cafbc92897418936119f4",
+    "rtl/nco/rf_nco_mode.sv": "390a80ed8fae01d8e9c85d981b604a116c1c4364b862e6c57a0408d873114786",
+    "rtl/nco/high_purity_quarter.svh": "a3e1227bf9eb206344441ea1b520c47fbab3e8d825f0d1f94c412f7f198aff7c",
+    "models/python/chirp.py": "1b7741f97d17632f5dd417986dea2d7ce8e55d88a8d35a74709eb14e7cee4732",
+    "models/python/nco.py": "98fb7ab2d21bb9ac3d4b6a9ab86f3328c0532341fde7fa5a3d143764ebacbc7d",
+    "models/python/high_purity.py": "b052c8de54e5ce6632b98546ea6bf14ce990a3cebc1cd18406b367f89173cc40",
+    "models/python/nco_lut.py": "1b4770fe6d04c0ebc71bfd34b312e2535a1b805cc1ca1f0ad8fb0b0c801d3769",
+    "fpga/lifcl40/capture/capture_format.py": "2133cfc23d4fa168adaa2b67263974461b40d27134dce016c360399f0fa770db",
+    "fpga/lifcl40/capture/capture_i2c.sv": "ca363d1ea7765352b4cc93a7f0110ce96266f7b7b00c134d35647601d1f9a5af",
+    "fpga/lifcl40/capture/audit.py": "1ec32a62f2ce977a9ad2b5066efd6de66a7ef05ece3349c039ba1fe75344e2e6",
+    "fpga/lifcl40/capture/test_format.py": "37ecd51332720ea3e9aedfcad48a7c390d7deff463487d03cf56c4a9c29e1b67",
+    "fpga/lifcl40/capture/integration_cocotb.py": "262480d3d4f2bd7d601096b3152fbcd5bbffcae9bc27be7bcb56004275ad956b",
+    "fpga/lifcl40/capture/test_capture.py": "092f244aad6b6a04aaa5ccbd488c687142b00baaffcf0fe988bafd0699fd6851",
+    "fpga/lifcl40/capture/capture_store.sv": "382ece17dfdbbd33ed64ff1e1fb3b98f14c6e77bee77436388f76afc2ac13aa7",
+    "fpga/lifcl40/capture/capture_cocotb.py": "b6453b97383cee6a9c6b47a8b35414a402fdac0fc57a79a011722c0c94bf37af",
+    "fpga/lifcl40/capture/capture_readback_top.sv": "7b1cded57ceb2c48388963a87b5a51b115736567d8fce0f39ba398a259eae66c",
+    "fpga/lifcl40/capture/read_capture.py": "c1ca9c99da0500c1f5e687acfc43fceb41cfe4ba6bc61160b6cf565dc282cb79",
+    "fpga/lifcl40/capture/sim_top.sv": "191b0f3e1b511fef5457fdd15b94eaa6ee5a0ee34e7f1043b4bb960f0afb3207",
+    "fpga/lifcl40/capture/read_capture_v2.py": "fc9183854b525df4f4c88492749de4307178c887ede9533463b655d9ac6c45fa",
+    "fpga/lifcl40/high_purity_capture/test_high_purity_capture.py": "034732fddb21c4ec349f500c70a12d7018f6f4fd4413b7278195e3744599bfd9",
+    "fpga/lifcl40/high_purity_capture/test_high_purity_format.py": "4de5c14d6c20e7554ffacd2f71ed719f48dfe04975cd7fed28dee0807a9cace0",
+    "fpga/lifcl40/high_purity_capture/audit.py": "4e7fc191b561ddb0aae93cdd98a6014cbaa41723407dc976bea6695ea68a27ed",
+    "fpga/lifcl40/high_purity_capture/integration_cocotb.py": "ec6e12d68b1a13601698402c46d414e2862886fe459066ff9e198809d4b6aef7",
+    "fpga/lifcl40/high_purity_capture/transport_cocotb.py": "e3547aa4829ba237f46f1d472de21ea5fa4de66e7eb020e360feeae31167d3f0",
+    "fpga/lifcl40/high_purity_capture/high_purity_capture_top.sv": "55d76ec1d3185cb7fe705f5165e30e938a4a5d82f71178253cfbf8ddd8ec546e",
+    "fpga/lifcl40/high_purity_capture/hp_capture_store.sv": "2adf3882e7f69f25688656774a5df2885e5070ea058f3eca03435ff6361d40a8",
+    "fpga/lifcl40/high_purity_capture/hp_capture_sim.sv": "d0dae875305849df8df3d27fcfb61f966da62adb59e58c7fdcd57174045f715c",
+    "fpga/lifcl40/capture/capture.pdc": "22ab0141c301c5f0d76c3d17eacca61bf5b33a4db49b79bc392e73632991748a"
+  },
+  "loaded_bitstream_sha256": "206f10e0fd0d69f60f4fae54c2ea8535497e5fe8818cf2dbf2cc27222277233e",
+  "compact_physical": {
+    "samples_compared": 1024,
+    "mismatch_counts": {
+      "I": 0,
+      "Q": 0,
+      "valid": 0,
+      "chirp_start": 0,
+      "chirp_end": 0
+    },
+    "first_mismatch_index": {
+      "I": null,
+      "Q": null,
+      "valid": null,
+      "chirp_start": null,
+      "chirp_end": null
+    },
+    "first_eight_mismatches_per_field": {
+      "I": [],
+      "Q": [],
+      "valid": [],
+      "chirp_start": [],
+      "chirp_end": []
+    },
+    "records_with_any_mismatch": 0,
+    "max_absolute_error": {
+      "I": 0,
+      "Q": 0
+    },
+    "rms_error": {
+      "I": 0.0,
+      "Q": 0.0
+    },
+    "marker_checks": {
+      "first_record_start": true,
+      "exactly_one_start": true,
+      "all_end_zero": true,
+      "all_valid": true
+    },
+    "exact_pass": true,
+    "raw_crosscheck": {
+      "status": "PASS",
+      "records_compared": 1024,
+      "records_with_any_mismatch": 0,
+      "first_eight_mismatches": []
+    },
+    "configuration": {
+      "sample_rate_hz": 12000000,
+      "start_word": 178956971,
+      "step": 53692,
+      "length": 10000,
+      "repeat": false,
+      "depth": 1024,
+      "initial_phase": 0,
+      "phase_bits": 32,
+      "output_bits": 14,
+      "lut_address_bits": 10,
+      "alignment_offset": 0
+    }
+  },
+  "control_mismatches": 0,
+  "first_record_exact": true,
+  "first_hardware_record": {
+    "index": 0,
+    "I": 131071,
+    "Q": 0,
+    "valid": 1,
+    "chirp_start": 1,
+    "chirp_end": 0
+  },
+  "first_expected_record": {
+    "index": 0,
+    "I": 131071,
+    "Q": 0,
+    "valid": 1,
+    "chirp_start": 1,
+    "chirp_end": 0
+  },
+  "last_hardware_record": {
+    "index": 1023,
+    "I": 70186,
+    "Q": 110695,
+    "valid": 1,
+    "chirp_start": 0,
+    "chirp_end": 0
+  },
+  "last_expected_record": {
+    "index": 1023,
+    "I": 70186,
+    "Q": 110695,
+    "valid": 1,
+    "chirp_start": 0,
+    "chirp_end": 0
+  },
+  "overall_pass": true,
+  "source_sha256": {
+    "analysis/verify_high_purity_hardware.py": "b4f4f85b157c699e74ab27b007652017313143df6e597b3bcc91ae7992b51a06",
+    "analysis/plot_hardware_verification.py": "9850795b43a66808efb19ded7cee1144d5b5c9b80e6c14675ffae1589bddcd12"
+  },
+  "offline_regression": {
+    "summary": "87 passed in 86.15s (0:01:26), exit 0; public-only source export, clean build directories, existing Python environment reused.",
+    "command": ".venv/bin/python -m pytest -q verification/pytest/test_high_purity_model.py verification/pytest/test_production_modes.py fpga/lifcl40/high_purity_capture/test_high_purity_format.py fpga/lifcl40/high_purity_capture/test_high_purity_capture.py analysis/test_hardware_verification.py analysis/test_high_purity_hardware.py fpga/lifcl40/capture/test_format.py"
+  },
+  "generated_figures": [
+    "docs/images/fpga_vs_python_high_purity_iq.png",
+    "docs/images/fpga_python_high_purity_error.png",
+    "docs/images/high_purity_physical_validation_summary.png"
+  ],
+  "immutable_evidence_verified_after_analysis": true,
+  "publication_note": "Recomputed offline for the public layout; original physical CSV/BIN, production RTL and numerical models unchanged. Figures are canonical public copies of the verified Milestone 5A originals. Generated outputs remain local."
+}

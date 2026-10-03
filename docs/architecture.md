@@ -1,5 +1,7 @@
 # Compact waveform engine architecture
 
+This page describes the preserved compact configuration. See [selectable high-purity mode](high_purity_nco.md) for 64-bit arithmetic, 18-bit I/Q, and its two-stage latency.
+
 `rf_chirp_nco` composes `chirp_controller` with `rf_nco`. The reusable SystemVerilog is vendor-independent; only the board wrappers and constraints select the LIFCL-40-EVN.
 
 | Property | Compact production configuration |
