@@ -1,0 +1,149 @@
+{
+  "abi_version": 65536,
+  "ip_id": 1330792009,
+  "registers": [
+    {
+      "name": "IP_ID",
+      "offset": 0,
+      "access": "RO",
+      "reset": 1330792009
+    },
+    {
+      "name": "ABI_VERSION",
+      "offset": 4,
+      "access": "RO",
+      "reset": 65536
+    },
+    {
+      "name": "CAPABILITIES",
+      "offset": 8,
+      "access": "RO",
+      "reset": "profile"
+    },
+    {
+      "name": "SCRATCH",
+      "offset": 12,
+      "access": "RW",
+      "reset": 0
+    },
+    {
+      "name": "COMMAND",
+      "offset": 16,
+      "access": "WO",
+      "reset": 0
+    },
+    {
+      "name": "STATUS",
+      "offset": 20,
+      "access": "RO",
+      "reset": 0
+    },
+    {
+      "name": "ERROR_STATUS",
+      "offset": 24,
+      "access": "RO",
+      "reset": 0
+    },
+    {
+      "name": "CONFIG_SEQUENCE",
+      "offset": 28,
+      "access": "RO",
+      "reset": 0
+    },
+    {
+      "name": "MODE",
+      "offset": 32,
+      "access": "SHADOW",
+      "reset": "engine_kind"
+    },
+    {
+      "name": "RUN_CONTROL",
+      "offset": 36,
+      "access": "RW",
+      "reset": 0
+    },
+    {
+      "name": "NCO_PHASE_INC_LO",
+      "offset": 40,
+      "access": "SHADOW",
+      "reset": 0
+    },
+    {
+      "name": "NCO_PHASE_INC_HI",
+      "offset": 44,
+      "access": "SHADOW",
+      "reset": 0
+    },
+    {
+      "name": "CHIRP_START_LO",
+      "offset": 48,
+      "access": "SHADOW",
+      "reset": 0
+    },
+    {
+      "name": "CHIRP_START_HI",
+      "offset": 52,
+      "access": "SHADOW",
+      "reset": 0
+    },
+    {
+      "name": "CHIRP_STEP_LO",
+      "offset": 56,
+      "access": "SHADOW",
+      "reset": 0
+    },
+    {
+      "name": "CHIRP_STEP_HI",
+      "offset": 60,
+      "access": "SHADOW",
+      "reset": 0
+    },
+    {
+      "name": "CHIRP_LENGTH",
+      "offset": 64,
+      "access": "SHADOW",
+      "reset": 0
+    },
+    {
+      "name": "CHIRP_CONFIG",
+      "offset": 68,
+      "access": "SHADOW",
+      "reset": 0
+    }
+  ],
+  "commands": {
+    "COMMIT": 0,
+    "START": 1,
+    "CLEAR_STATUS": 2
+  },
+  "errors": {
+    "COMMIT_WHILE_BUSY": 0,
+    "START_WHILE_BUSY": 1,
+    "START_WITH_DIRTY_CONFIG": 2,
+    "START_WITHOUT_VALID_CONFIG": 3,
+    "INVALID_CONFIGURATION": 4,
+    "BAD_COMMAND": 5,
+    "ILLEGAL_BUS_ACCESS": 6,
+    "START_WHILE_DISABLED": 7
+  },
+  "status": {
+    "BUSY": 0,
+    "DONE_STICKY": 1,
+    "ERROR_STICKY": 2,
+    "CONFIG_DIRTY": 3,
+    "CONFIG_VALID": 4,
+    "RUN_ENABLE": 5
+  },
+  "capabilities": {
+    "COMPACT": 0,
+    "HIGH_PURITY": 1,
+    "TONE": 2,
+    "CHIRP": 3,
+    "REPEAT": 4,
+    "PAUSE": 5
+  },
+  "modes": {
+    "TONE": 0,
+    "CHIRP": 1
+  }
+}

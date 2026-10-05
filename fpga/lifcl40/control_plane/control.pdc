@@ -1,0 +1,10 @@
+# Synthetic offline feasibility pins, NOT an operational board interface.
+# Uses known valid package sites; no hardware access or board validation.
+ldc_set_location -site L13 [get_ports clk]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports clk]
+ldc_set_location -site E17 [get_ports activity]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports activity]
+ldc_set_location -site F20 [get_ports serial_in]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports serial_in]
+ldc_set_location -site E20 [get_ports reset_in]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports reset_in]
