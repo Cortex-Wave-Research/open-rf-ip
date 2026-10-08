@@ -1,0 +1,3 @@
+# Preserve the audited raw upstream bytes across checkout platforms.
+VexRiscv.v -text
+LICENSE -text
