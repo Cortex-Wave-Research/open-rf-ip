@@ -1,0 +1,11 @@
+# Synthetic feasibility pins only; this is not a board-level CPU interface.
+ldc_set_location -site {L13} [get_ports clk]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports clk]
+ldc_set_location -site {E20} [get_ports reset_in]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports reset_in]
+ldc_set_location -site {F20} [get_ports {status[0]}]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports {status[0]}]
+ldc_set_location -site {F13} [get_ports {status[1]}]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports {status[1]}]
+ldc_set_location -site {E17} [get_ports {status[2]}]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports {status[2]}]
